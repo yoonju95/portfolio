@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="wrap">
+    <em class="bd bd1"></em>
+    <em class="bd bd2"></em>
+    <em class="bd bd3"></em>
+    <a href="" class="resetBtn">Reset</a>
+
+    <div class="box-container">
+      <div class="item a"></div>
+      <div class="item b"></div>
+      <div class="item c"></div>
+    </div>
+  </div>
+  <script>
+    (function(){
+      const boxCont = document.querySelector('.box-container');
+
+      function itemHandler(e){
+        if (e.target.classList.contains('item')){
+          boxCont.removeChild(e.target);
+        //  console.log(e.target);
+        }
+      }
+
+      boxCont.addEventListener("click", itemHandler);
+
+
+    })();
+  </script>
+</body>
+</html>
