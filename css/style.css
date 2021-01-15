@@ -1,0 +1,53 @@
+#wrap {position:relative; width:100vw;height:100vh;background-color: cornflowerblue;}
+
+.box-container {position:relative;width:100%;height: 100%;z-index: 2;}
+
+@keyframes moving1 {
+  0 {transform: translate(0 ,0)} 
+  25% {transform: translate(calc(100vw - 50px) ,0)}
+  50%{transform: translate(calc(100vw - 50px) , calc(100vh - 50px))}
+  75% {transform: translate(0 ,calc(100vh - 50px))}
+}
+@keyframes moving2 {
+  0 {transform: translate(0 ,0)} 
+  25% {transform: translate(calc(100vw - 150px) ,0)}
+  50%{transform: translate(calc(100vw - 150px) , calc(100vh - 150px))}
+  75% {transform: translate(0 ,calc(100vh - 150px))}
+}
+@keyframes moving3 {
+  0 {transform: translate(0 ,0)} 
+  25% {transform: translate(calc(100vw - 250px) ,0)}
+  50%{transform: translate(calc(100vw - 250px) , calc(100vh - 250px))}
+  75% {transform: translate(0 ,calc(100vh - 250px))}
+}
+
+
+.item {position:absolute;width:50px;height:50px;left:0; z-index:2;
+  background-repeat: no-repeat;background-position: 50% 50%;
+  background-size: contain;}
+
+.item.a {
+left:0;top:0;
+background-image: url('../images/ilbuni_0.png');
+animation: moving1 4s infinite;}
+.item.b {
+left:50px;top:50px;
+background-image: url('../images/ilbuni_1.png');
+animation: moving2 6s infinite;
+animation-direction: reverse;}
+.item.c {
+left:100px;top:100px;
+background-image: url('../images/ilbuni_2.png');
+animation: moving3 5s infinite;}
+
+em.bd {position: absolute;border: 2px dashed rgba(255, 255, 255, 0.616);box-sizing: border-box;}
+
+em.bd1 {left:50px;top:50px;width:calc(100% - 100px);height:calc(100% - 100px);}
+em.bd2 {left:100px;top:100px;width:calc(100% - 200px);height:calc(100% - 200px);}
+em.bd3 {left:150px;top:150px;width:calc(100% - 300px);height:calc(100% - 300px);}
+
+
+.resetBtn {position: absolute;left:50%;top:50%;transform: translate(-50%, -50%);z-index:3;cursor:pointer;text-decoration: none;
+display: inline-block;padding:5px 10px 3px;font-size:14px;font-weight:bold;color:#fff;background: rgba(255,255,255,0.5);text-align: center;border-radius: 10px; 
+transition: background 0.3s ease-in-out;}
+.resetBtn:hover {background: rgba(255, 255, 255, 0.2)}
